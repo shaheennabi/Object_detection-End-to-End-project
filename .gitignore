@@ -166,4 +166,8 @@ cython_debug/
 CollectedImages/*
 test.ipynb
 sign_data.zip
+<<<<<<< HEAD
 artifacts/*
+=======
+artifacts/*
+>>>>>>> origin/main

@@ -25,4 +25,4 @@ class DataIngestionConfig:
         data_ingestion_dir, DATA_INGESTION_FEATURE_STORE_DIR
     )
 
-    data_download_url: str = DATA_DOWNLOAD_URL
+    data_download_url: str = os.getenv('DATA_DOWNLOAD_URL')

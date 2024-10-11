@@ -166,3 +166,4 @@ cython_debug/
 CollectedImages/*
 Notebook/test.ipynb
 Notebook/sign_data.zip
+artifacts/*

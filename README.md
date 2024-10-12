@@ -14,7 +14,18 @@ pip install -r requirements.txt
 ```
 
 
+### Export the  environment variable(anaconda prompt)
+
+```bash
+set DATA_DOWNLOAD_URL=https://drive.google.com/uc?/export=download&id=  your file_id goes here"
+```
 ### Export the  environment variable(git bash)
+
+```bash
+export DATA_DOWNLOAD_URL="https://drive.google.com/file/d/ you file_id goes here"
+```
+
+
 
 # Workflow
 After creating project template

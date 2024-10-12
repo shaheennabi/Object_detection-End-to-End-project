@@ -3,7 +3,7 @@
 # If you want to run It  
 
 ```bash
-conda create -n signLanguage python=3.7 -y
+conda create -n signLanguage python=3.8 -y
 
 ```
 ```bash

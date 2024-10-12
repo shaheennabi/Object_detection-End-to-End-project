@@ -22,7 +22,7 @@ set DATA_DOWNLOAD_URL=https://drive.google.com/uc?/export=download&id=  your fil
 ### Export the  environment variable(git bash)
 
 ```bash
-export DATA_DOWNLOAD_URL="https://drive.google.com/file/d/ you file_id goes here"
+export DATA_DOWNLOAD_URL="https://drive.google.com/file/d/ your file_id goes here"
 ```
 
 

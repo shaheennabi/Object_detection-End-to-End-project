@@ -1,11 +1,24 @@
 # Object_detection-End-to-End-project
 
+# If you want to run It  
 
-# Collected Images Record
+```bash
+conda create -n signLanguage python=3.7 -y
 
-* Collected 500 Images for Hello
-* Collected 500 Images for Yes
-* Collected 500 Images for No
-* Collected 500 Images for Thanks
-* Collected 500 Images for IloveYou
-* Collected 500 Images for Please
+```
+```bash
+conda activate signlanguage
+```
+```bash
+pip install -r requirements.txt
+```
+
+
+### Export the  environment variable(git bash)
+
+# Workflow
+After creating project template
+ * Update constants 
+ * Update Entiry modules
+ * Update respective component
+ * Update pipeline

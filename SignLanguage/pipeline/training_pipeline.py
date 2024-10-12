@@ -70,12 +70,11 @@ class TrainPipeline:
 
 
 
-
     def run_pipeline(self) -> None:
-            try:
-                data_ingestion_artifact = self.start_data_ingestion()
-                data_validation_artifact = self.start_data_validation()
+        try:
+            data_ingestion_artifact = self.start_data_ingestion()
 
+            data_validation_artifact = self.start_data_validation(data_ingestion_artifact)
 
-            except Exception as e:
-                raise SignException(e, sys)
+        except Exception as e:
+            raise SignException(e, sys)

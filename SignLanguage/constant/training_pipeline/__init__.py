@@ -35,3 +35,11 @@ MODEL_TRAINER_PRETRAINED_WEIGHT_NAME: str = "yolov5s.pt"
 MODEL_TRAINER_NO_EPOCHS: int = 1
 
 MODEL_TRAINER_BATCH_SIZE: int = 16
+
+
+"""
+Model Pusher related constant start with MODEL_PUSHER var name
+"""
+
+BUCKET_NAME = "sign-language-22"
+S3_MODEL_NAME = "best.pt"

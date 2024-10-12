@@ -162,7 +162,7 @@ cython_debug/
 #.idea/
 
 
-
+artifacts/*
 CollectedImages/*
 test.ipynb
 sign_data.zip

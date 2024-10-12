@@ -7,13 +7,16 @@ from SignLanguage.entity.artifacts_entity import DataIngestionArtifact
 from SignLanguage.components.data_validation import DataValidation
 from SignLanguage.entity.config_entity import DataValidationconfig
 from SignLanguage.entity.artifacts_entity import DataValidationArtifact
+from SignLanguage.components.model_trainer import ModelTrainer
+from SignLanguage.entity.config_entity import ModelTrainerConfig
+from SignLanguage.entity.artifacts_entity import ModelTrainerArtifact
 
 
 class TrainPipeline:
     def __init__(self):
         self.data_ingestion_config = DataIngestionConfig()
         self.data_validation_config = DataValidationconfig()
-
+        self.model_trainer_config = ModelTrainerConfig()
 
 
 
@@ -63,6 +66,17 @@ class TrainPipeline:
 
 
 
+    def start_model_trainer(self) -> ModelTrainerArtifact:
+
+        try: 
+            model_trainer = ModelTrainer(model_trainer_config=self.model_trainer_config)
+            model_trainer_artifact = model_trainer.initiate_model_trainer()
+
+            return  model_trainer_artifact
+        
+
+        except Exception as e:
+            raise SignException(e, sys)
 
 
 
@@ -75,6 +89,12 @@ class TrainPipeline:
             data_ingestion_artifact = self.start_data_ingestion()
 
             data_validation_artifact = self.start_data_validation(data_ingestion_artifact)
+
+            if data_validation_artifact.validation_status == True:
+                model_trainer_artifact = self.start_model_trainer()
+
+            else: 
+                raise Exception("Your data is not in correct format, check the validation requirements")
 
         except Exception as e:
             raise SignException(e, sys)

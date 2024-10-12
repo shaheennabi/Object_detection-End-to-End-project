@@ -181,5 +181,5 @@ wincertstore==0.2
 y-py==0.5.9
 ypy-websocket==0.3.2
 zipp==3.15.0
-
+git+https://github.com/ultralytics/yolov5.git
 -e .

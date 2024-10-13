@@ -168,6 +168,7 @@ CollectedImages/*
 test.ipynb
 sign_data.zip
 SignLangData.zip
+data/*
 <<<<<<< HEAD
 artifacts/*
 =======

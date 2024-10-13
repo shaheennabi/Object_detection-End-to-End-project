@@ -1,5 +1,4 @@
 import sys, os
-from pathlib import Path
 from SignLanguage.pipeline.training_pipeline import TrainPipeline
 from SignLanguage.exception import SignException
 from SignLanguage.utils.main_utils import decodeImage, encodeImageIntoBase64
@@ -39,14 +38,9 @@ def predictRoute():
         image = request.json['image']
         decodeImage(image, clApp.filename)
 
-        # Construct absolute paths for weights and image
-        weights_path = os.path.abspath("yolov5/my_model.pt")
-        source_image_path = os.path.abspath("data/inputImage.jpg")
-        print(f"Weights path: {weights_path}, Source image path: {source_image_path}")
-
         os.system("cd yolov5/ && python detect.py --weights my_model.pt --img 416 --conf 0.5 --source ../data/inputImage.jpg")
 
-        opencodedbase64 = encodeImageIntoBase64("yolov5/runs//detect/exp/inputImage.jpg")
+        opencodedbase64 = encodeImageIntoBase64("yolov5/runs/detect/exp/inputImage.jpg")
         result = {"image": opencodedbase64.decode('utf-8')}
         os.system("rm -rf yolov5/runs")
 
@@ -81,4 +75,4 @@ def predictLive():
 
 if __name__ == "__main__":
     clApp = ClientApp()
-    app.run(host="0.0.0.0", port=8080)
+    app.run(host="0.0.0.0", port=5000)

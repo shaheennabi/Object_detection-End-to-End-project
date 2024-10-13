@@ -10,6 +10,13 @@ from SignLanguage.entity.artifacts_entity import DataValidationArtifact
 from SignLanguage.components.model_trainer import ModelTrainer
 from SignLanguage.entity.config_entity import ModelTrainerConfig
 from SignLanguage.entity.artifacts_entity import ModelTrainerArtifact
+from SignLanguage.components.model_pusher import ModelPusher
+from SignLanguage.entity.config_entity import ModelPusherConfig
+from SignLanguage.entity.artifacts_entity import ModelPusherArtifacts
+from SignLanguage.configuration import s3_operations
+
+
+
 
 
 class TrainPipeline:
@@ -17,8 +24,8 @@ class TrainPipeline:
         self.data_ingestion_config = DataIngestionConfig()
         self.data_validation_config = DataValidationconfig()
         self.model_trainer_config = ModelTrainerConfig()
-
-
+        self.model_pusher_config = ModelPusherConfig()
+        self.s3_operations = s3_operations()
 
     def start_data_ingestion(self)-> DataIngestionArtifact:
             try: 
@@ -82,6 +89,26 @@ class TrainPipeline:
 
 
 
+    def start_model_pusher(self, model_trainer_artifact: ModelTrainerArtifact, s3: s3_operations):
+
+        try:
+            model_pusher = ModelPusher(
+                model_pusher_config=self.model_pusher_config,
+                model_trainer_artifact= model_trainer_artifact,
+                s3=s3
+                
+            )
+            model_pusher_artifact = model_pusher.initiate_model_pusher()
+
+            return model_pusher_artifact
+        
+        except Exception as e:
+            raise SignException(e, sys)
+
+
+
+
+
 
 
     def run_pipeline(self) -> None:
@@ -92,7 +119,8 @@ class TrainPipeline:
 
             if data_validation_artifact.validation_status == True:
                 model_trainer_artifact = self.start_model_trainer()
-
+                model_pusher_artifact = self.start_model_pusher(model_trainer_artifact=model_pusher_artifact, s3=s3_operations)
+                
             else: 
                 raise Exception("Your data is not in correct format, check the validation requirements")
 

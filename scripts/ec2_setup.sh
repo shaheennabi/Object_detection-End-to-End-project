@@ -12,7 +12,7 @@ sudo sh get-docker.sh
 
 sudo usermod -aG docker $USER
 
-newgrp docker
+sudo usermod -aG docker $USER
 
 sudo apt install awscli -y
 

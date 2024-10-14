@@ -21,45 +21,47 @@
 * Additional Information: Further details, including setup instructions and usage, can be found in the project repository
 
 ### Project Tree Structure 
-├── Object_Detection-End-to-End-project/
-│   ├── .github/workflows/
-│   │   └── main.yaml
-│   ├── .jenkins/
-│   │   └── Jenkinsfile
-│   ├── artifact/
-│   │   └── 10_05_2024_03_23_14 (or time Stamp)/
-│   │       ├── data_ingestion/
-│   │       │   ├── feature_store/
-│   │       │   │   ├── test
-│   │       │   │   ├── train
-│   │       │   │   ├── valid
-│   │       │   │   └── data.yaml
-│   │       │   └── SignLangData.Zip
-│   │       ├── data_validation/
-│   │       │   └── status.txt           
-│   │       └── model_trainer/
-│   │           └── best.pt
-│   ├── data/
-│   │   ├── .gitkeep
-│   │   └── inputImage.pg
-│   ├── flowchat
-│   ├── logs
-│   └── notebook/
-│       ├── Object_Detection_with_Yolov5.ipynb
-│       └── test.ipynb
+
+Object_Detection-End-to-End-project/
+├── .github/
+│   └── workflows/
+│       └── main.yaml
+├── .jenkins/
+│   └── Jenkinsfile
+├── artifact/
+│   └── 10_05_2024_03_23_14 (or time Stamp)/
+│       ├── data_ingestion/
+│       │   ├── feature_store/
+│       │   │   ├── test
+│       │   │   ├── train
+│       │   │   ├── valid
+│       │   │   └── data.yaml
+│       │   └── SignLangData.Zip
+│       ├── data_validation/
+│       │   └── status.txt           
+│       └── model_trainer/
+│           └── best.pt
+├── data/
+│   ├── .gitkeep
+│   └── inputImage.jpg
+├── flowchart/
+├── logs/
+├── notebook/
+│   ├── Object_Detection_with_Yolov5.ipynb
+│   └── test.ipynb
 ├── scripts/
 │   ├── ec2_setup.sh
 │   └── jenkins.sh
-├── SignLangauge or src/
+├── SignLanguage or src/
 │   ├── components/
-│   │   ├── __pychache__/
+│   │   ├── __pycache__/
 │   │   ├── __init__.py
 │   │   ├── data_ingestion.py
 │   │   ├── data_validation.py
 │   │   ├── model_pusher.py
 │   │   └── model_trainer.py
 │   ├── configuration/
-│   │   ├── __pycache__
+│   │   ├── __pycache__/
 │   │   ├── logs/
 │   │   ├── __init__.py
 │   │   ├── gdown_connection.py
@@ -79,7 +81,7 @@
 │   │   └── __init__.py
 │   ├── logger/
 │   │   ├── __pycache__/
-│   │   └── __init__py
+│   │   └── __init__.py
 │   ├── pipeline/
 │   │   ├── __pycache__/
 │   │   ├── __init__.py
@@ -90,7 +92,7 @@
 │       └── main_utils.py
 ├── templates/
 │   └── index.html
-├── yolov5
+├── yolov5/
 ├── app.py
 ├── data_collector.py
 ├── docker_compose.yml

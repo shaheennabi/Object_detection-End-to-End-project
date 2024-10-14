@@ -1,8 +1,24 @@
 # Object_detection-End-to-End-project
 
 ## Project Overview
-This project focuses on building an end-to-end object detection pipeline using YOLOv5 for detecting objects in images or video streams. The dataset used consists of images related to [insert specific use case, e.g., sign language detection]. The project aims to demonstrate the integration of data processing, model training, and deployment.
 
+* Objective: Develop an object detection system using the YOLOv5s pretrained model.
+
+* Dataset:
+
+    Total Images: 2,086 images
+    Training Images: 1,461
+    Validation Images: 417
+    Testing Images: 208
+    Annotation Tool: Data was annotated using Roboflow for efficient labeling.
+    Model Training:
+
+* Framework: Utilized the YOLOv5s model, known for its speed and accuracy.
+* Environment: Training conducted on Google Colab with GPU support.
+* Epochs: The model was trained for 250 epochs, resulting in significant improvements in detection accuracy.
+* Performance: The trained model demonstrated great accuracy on the validation and testing datasets.
+
+* Additional Information: Further details, including setup instructions and usage, can be found in the project repository
 
 
 
@@ -18,7 +34,7 @@ This project focuses on building an end-to-end object detection pipeline using Y
 * Create a new conda environment and activate it:
 
 ```bash
-conda create -n signLanguage python=3.8 -y
+conda create -n signLanguage python=3.10 -y
 
 ```
 ```bash
@@ -59,13 +75,12 @@ After creating project template
 2. Run the training script:
 
    ```bash
-   python src/train.py --config config/train_config.yaml
-
+   python  cd yolov5/ && python train.py --img 416 --batch 16 --epochs 300 --data '../data.yaml' --cfg ./models/custom_yolov5s.yaml --weights 'yolov5s.pt' --name yolov5s_results  --cache
    ```
 
 To use the trained model for inference on new images, run:
 ```bash
-python src/inference.py --input_image_path data/test_image.jpg --model_path models/trained_model.pth
+python cd yolov5/ && python detect.py --weights /content/runs/train/yolov5s_results/weights/best.pt --img 416 --conf 0.5 --source /content/test/images
   ```
 
 

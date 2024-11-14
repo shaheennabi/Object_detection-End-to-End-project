@@ -1,26 +1,25 @@
-# Object_detection-End-to-End-project
+# 🎆🎉 Object_detection-End-to-End-project 🎉🎆
 
 ## Project Overview
 
-* Objective: Develop an object detection system using the YOLOv5s pretrained model.
+* **Objective**: Develop an object detection system using the YOLOv5s pretrained model.
 
-* Dataset:
+* **Dataset**:
+  - Total Images: 2,086 images
+  - Training Images: 1,461
+  - Validation Images: 417
+  - Testing Images: 208
+  - Annotation Tool: Data was annotated using Roboflow for efficient labeling.
 
-    Total Images: 2,086 images
-    Training Images: 1,461
-    Validation Images: 417
-    Testing Images: 208
-    Annotation Tool: Data was annotated using Roboflow for efficient labeling.
-    Model Training:
+* **Model Training**:
+  - Framework: Utilized the YOLOv5s model, known for its speed and accuracy.
+  - Environment: Training conducted on Google Colab with GPU support.
+  - Epochs: The model was trained for 250 epochs, resulting in significant improvements in detection accuracy.
+  - Performance: The trained model demonstrated great accuracy on the validation and testing datasets.
 
-* Framework: Utilized the YOLOv5s model, known for its speed and accuracy.
-* Environment: Training conducted on Google Colab with GPU support.
-* Epochs: The model was trained for 250 epochs, resulting in significant improvements in detection accuracy.
-* Performance: The trained model demonstrated great accuracy on the validation and testing datasets.
+* **Additional Information**: Further details, including setup instructions and usage, can be found in the project repository.
 
-* Additional Information: Further details, including setup instructions and usage, can be found in the project repository
-
-### Project Tree Structure 
+### 🎋 Project Tree Structure 🎋
 ```bash
 
 Object_Detection-End-to-End-project/

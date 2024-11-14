@@ -126,16 +126,16 @@ export DATA_DOWNLOAD_URL="https://drive.google.com/file/d/ your file_id goes her
 
 
 
-# Workflow
-After creating project template
- * Update constants 
- * Update Entiry modules
- * Update respective component
- * Update pipeline
- * Endpoint - (app.py)
+# 🎉 Workflow 🎉
 
+After creating the project template:
+ * 🎇 Update constants 🎆
+ * 🎇 Update Entity modules 🎆
+ * 🎇 Update respective component 🎆
+ * 🎇 Update pipeline 🎆
+ * 🎉 Endpoint - (app.py) 🎉
 
-## Model Training
+## 🎆 Model Training 🎆
 
 1. Ensure the dataset is properly loaded in the `data/` folder.
 2. Run the training script:
